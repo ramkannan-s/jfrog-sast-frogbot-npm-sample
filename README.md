@@ -1,0 +1,1 @@
+# jfrog-sast-frogbot-npm-sample
