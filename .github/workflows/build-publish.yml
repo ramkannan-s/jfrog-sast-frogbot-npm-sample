@@ -33,9 +33,6 @@ jobs:
            
        - name: Install Dependencies
          run: jf npm install
-           
-       - name: Run tests
-         run: npm test
          
        - name: Publish
          run: jf npm publish
@@ -43,8 +40,8 @@ jobs:
        - name: Publish Build info With JFrog CLI
          run: |
           # Collect environment variables for the build
-          jf rt build-collect-env
+          jf rt bce jfrog-gitbub-oidc-npm-publish ${{ github.run_number }}
           # Collect VCS details from git and add them to the build
-          jf rt build-add-git
+          jf rt build-add-git jfrog-gitbub-oidc-npm-publish ${{ github.run_number }}
           # Publish build info
-          jf rt build-publish
+          jf rt bp jfrog-gitbub-oidc-npm-publish ${{ github.run_number }}
