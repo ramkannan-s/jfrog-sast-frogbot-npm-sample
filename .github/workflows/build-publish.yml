@@ -32,10 +32,10 @@ jobs:
          run: jf npm-config --global=true --repo-resolve=$PLATFORM_REPO --repo-deploy=$PLATFORM_REPO
            
        - name: Install Dependencies
-         run: jf npm install
+         run: jf npm install --build-name="jfrog-gitbub-oidc-npm-publish" --build-number=${{ github.run_number }}
          
        - name: Publish
-         run: jf npm publish
+         run: jf npm publish --build-name="jfrog-gitbub-oidc-npm-publish" --build-number=${{ github.run_number }}
          
        - name: Publish Build info With JFrog CLI
          run: |
