@@ -13,9 +13,6 @@ jobs:
       OIDC_AUDIENCE: 'jfrog-github'
       OIDC_PROVIDER: 'githubtest'
       PLATFORM_REPO: 'npm-virtual-repo'
-     defaults:
-      run:
-        working-directory: ./package
      steps:
        - name: Checkout
          uses: actions/checkout@v3
